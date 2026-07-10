@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karir - Gumelar</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Material+Symbols+Outlined:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="development-popup" role="dialog" aria-modal="true" aria-labelledby="development-popup-title">
+    <div class="development-popup-card">
+      <span class="material-symbols-outlined">construction</span>
+      <p class="eyebrow dark">Informasi</p>
+      <h2 id="development-popup-title">Akan Segera Hadir</h2>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html#home" aria-label="Gumelar">
+      <img class="brand-logo" src="assets/logo.png" alt="" aria-hidden="true">
+      <span>Gumelar</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-label="Buka navigasi" aria-expanded="false" aria-controls="site-nav">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Navigasi utama">
+      <a href="index.html#home">Beranda</a>
+      <a href="index.html#about">Tentang Kami</a>
+      <a href="index.html#services">Layanan</a>
+      <a href="index.html#projects">Proyek</a>
+      <a class="active nav-external" href="karir.html" target="_blank" rel="noopener">
+        <span>Karir</span>
+        <span class="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+      </a>
+      <a href="index.html#contact">Hubungi Kami</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="career-hero section" id="career">
+      <div class="container career-hero-grid">
+        <div>
+          <p class="eyebrow dark">Karir di Gumelar</p>
+          <h1>Berkembang Bersama Tim Electrical & Mechanical Solutions</h1>
+          <p class="hero-copy dark-copy">Halaman dummy untuk informasi magang dan lowongan kerja. Area ini dapat dipakai
+            untuk menampilkan kebutuhan teknisi, admin proyek, drafter, maupun posisi operasional lain.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#openings">
+              <span class="material-symbols-outlined">work</span>
+              Lihat Lowongan
+            </a>
+            <a class="button button-outline" href="#internship">
+              <span class="material-symbols-outlined">school</span>
+              Program Magang
+            </a>
+          </div>
+        </div>
+
+        <div class="career-panel" aria-label="Ringkasan peluang karir">
+          <div class="career-metric">
+            <span>02</span>
+            <p>Template lowongan aktif</p>
+          </div>
+          <div class="career-metric">
+            <span>03</span>
+            <p>Area penempatan dummy</p>
+          </div>
+          <div class="career-metric">
+            <span>K3</span>
+            <p>Budaya kerja aman dan rapi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section career-values">
+      <div class="container feature-grid">
+        <article class="feature-card">
+          <span class="material-symbols-outlined">engineering</span>
+          <h3>Belajar di Lapangan</h3>
+          <p>Ikut memahami alur survey, instalasi, dokumentasi, dan pengecekan pekerjaan secara bertahap.</p>
+        </article>
+        <article class="feature-card">
+          <span class="material-symbols-outlined">verified_user</span>
+          <h3>Disiplin Keselamatan</h3>
+          <p>Setiap kandidat dikenalkan pada standar kerja aman, penggunaan APD, dan komunikasi teknis.</p>
+        </article>
+        <article class="feature-card">
+          <span class="material-symbols-outlined">description</span>
+          <h3>Administrasi Rapi</h3>
+          <p>Template posisi dapat mencakup dokumentasi proyek, penawaran, laporan, dan arsip pekerjaan.</p>
+        </article>
+        <article class="feature-card">
+          <span class="material-symbols-outlined">groups</span>
+          <h3>Tim Kolaboratif</h3>
+          <p>Lingkungan kerja dibuat sederhana, langsung, dan mudah dipahami untuk anggota baru.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section internship" id="internship">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow dark">Program Magang</p>
+          <h2>Template Magang Siswa atau Mahasiswa</h2>
+          <p>Program magang ini masih dummy dan bisa disesuaikan dengan kebutuhan perusahaan. Cocok untuk jurusan teknik
+            listrik, teknik elektro, administrasi perkantoran, atau bidang yang relevan.</p>
+          <div class="career-list">
+            <span>Durasi: 2-6 bulan</span>
+            <span>Penempatan: Solo Raya</span>
+            <span>Status: Template</span>
+          </div>
+        </div>
+
+        <div class="career-checklist">
+          <h3>Contoh Aktivitas Magang</h3>
+          <ul>
+            <li>Membantu persiapan dokumen proyek dan checklist pekerjaan.</li>
+            <li>Mengenal peralatan dasar instalasi listrik dan panel.</li>
+            <li>Mendampingi tim saat survey atau pekerjaan lapangan.</li>
+            <li>Membuat laporan sederhana sesuai arahan pembimbing.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section openings" id="openings">
+      <div class="container section-heading">
+        <p class="eyebrow dark">Lowongan Kerja</p>
+        <h2>Posisi Dummy yang Bisa Diganti</h2>
+        <p>Gunakan area ini untuk mempublikasikan lowongan aktual ketika sudah tersedia.</p>
+      </div>
+
+      <div class="container job-grid">
+        <article class="job-card">
+          <div>
+            <span class="job-tag">Full-time</span>
+            <h3>Teknisi Instalasi Listrik</h3>
+            <p>Membantu pekerjaan instalasi, perawatan, dan pengecekan sistem kelistrikan di area proyek.</p>
+          </div>
+          <ul>
+            <li>Minimal SMK listrik atau setara.</li>
+            <li>Mampu bekerja dalam tim lapangan.</li>
+            <li>Memahami dasar K3 menjadi nilai tambah.</li>
+          </ul>
+          <a class="button button-outline job-button" href="index.html#contact">Hubungi HR</a>
+        </article>
+
+        <article class="job-card">
+          <div>
+            <span class="job-tag">Internship</span>
+            <h3>Admin Proyek Magang</h3>
+            <p>Mendukung pencatatan kebutuhan proyek, dokumentasi pekerjaan, dan komunikasi administrasi.</p>
+          </div>
+          <ul>
+            <li>Teliti mengelola dokumen.</li>
+            <li>Bisa menggunakan spreadsheet dasar.</li>
+            <li>Siap belajar alur operasional proyek.</li>
+          </ul>
+          <a class="button button-outline job-button" href="index.html#contact">Hubungi HR</a>
+        </article>
+
+        <article class="job-card">
+          <div>
+            <span class="job-tag">Template</span>
+            <h3>Drafter Electrical</h3>
+            <p>Placeholder untuk posisi drafter yang membantu gambar kerja, layout panel, dan revisi teknis.</p>
+          </div>
+          <ul>
+            <li>Memahami dasar gambar teknik.</li>
+            <li>Terbiasa membaca layout kelistrikan.</li>
+            <li>Portofolio sederhana dapat dilampirkan.</li>
+          </ul>
+          <a class="button button-outline job-button" href="index.html#contact">Hubungi HR</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section career-cta">
+      <div class="container career-cta-box">
+        <div>
+          <p class="eyebrow">Tertarik Bergabung?</p>
+          <h2>Kirim data diri melalui kontak perusahaan</h2>
+          <p>Untuk sementara, seluruh pengajuan karir diarahkan ke contact person CV. Gumelar sampai formulir rekrutmen
+            resmi tersedia.</p>
+        </div>
+        <a class="button button-primary" href="index.html#contact">
+          <span class="material-symbols-outlined">send</span>
+          Hubungi Kami
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <strong>CV. GUMELAR</strong>
+        <p>Electrical & Mechanical Solutions<br>
+          Office: Jl. Transito, Suronalan Rt. 05 Rw. 08, Pajang, Laweyan,
+          Surakarta,
+          57146</p>
+      </div>
+      <a class="footer-logo-link" href="#top" aria-label="Kembali ke atas">
+        <img src="assets/logo-gray.png" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

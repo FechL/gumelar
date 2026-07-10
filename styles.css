@@ -78,6 +78,51 @@ textarea {
   scroll-margin-top: 88px;
 }
 
+body.popup-open {
+  overflow: hidden;
+}
+
+.development-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(14, 28, 47, 0.58);
+  backdrop-filter: blur(3px);
+}
+
+.development-popup.is-hidden {
+  display: none;
+}
+
+.development-popup-card {
+  width: min(520px, 100%);
+  padding: 32px;
+  border: 1px solid rgba(197, 198, 205, 0.75);
+  border-radius: 16px;
+  background: var(--surface-card);
+  box-shadow: 0 24px 60px rgba(11, 25, 44, 0.28);
+  text-align: center;
+}
+
+.development-popup-card > .material-symbols-outlined {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 16px;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(201, 55, 55, 0.12);
+  color: var(--red);
+  font-size: 32px;
+}
+
+.development-popup-card p:not(.eyebrow) {
+  color: var(--muted);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -116,12 +161,20 @@ textarea {
 }
 
 .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   transition: color 0.2s ease;
+}
+
+.site-nav .nav-external .material-symbols-outlined {
+  font-size: 16px;
+  line-height: 1;
 }
 
 .site-nav a:hover,
@@ -226,6 +279,10 @@ h3 {
   font-size: 18px;
 }
 
+.dark-copy {
+  color: var(--muted);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -272,10 +329,26 @@ h3 {
   background: rgba(255, 255, 255, 0.12);
 }
 
+.button-outline {
+  border-color: var(--navy);
+  background: transparent;
+  color: var(--navy);
+}
+
+.button-outline:hover {
+  border-color: var(--red);
+  background: rgba(201, 55, 55, 0.08);
+  color: var(--red);
+}
+
 .highlights,
 .services,
 .contact,
-.partners {
+.partners,
+.career-values,
+.internship,
+.openings,
+.career-cta {
   padding: 80px 0;
 }
 
@@ -694,6 +767,155 @@ textarea:focus {
   border-radius: 12px;
 }
 
+.career-hero {
+  padding: 96px 0;
+  background:
+    linear-gradient(to right, rgba(14, 28, 47, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 28, 47, 0.05) 1px, transparent 1px),
+    var(--surface-card);
+  background-size: 40px 40px;
+}
+
+.career-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.career-hero h1 {
+  color: var(--navy);
+}
+
+.career-panel {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid rgba(197, 198, 205, 0.75);
+  border-radius: 16px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow);
+}
+
+.career-metric {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--surface-low);
+}
+
+.career-metric span {
+  color: var(--red);
+  font-family: Montserrat, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.career-metric p,
+.career-checklist p,
+.job-card p,
+.career-cta-box p {
+  color: var(--muted);
+}
+
+.career-values,
+.openings {
+  background: var(--surface);
+}
+
+.internship,
+.career-cta {
+  background: var(--surface-card);
+}
+
+.career-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.career-list span,
+.job-tag {
+  padding: 8px 12px;
+  border: 1px solid var(--outline);
+  border-radius: 999px;
+  background: var(--surface-low);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.career-checklist,
+.job-card {
+  border: 1px solid rgba(197, 198, 205, 0.75);
+  border-radius: 16px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow);
+}
+
+.career-checklist {
+  padding: 32px;
+}
+
+.career-checklist ul,
+.job-card ul {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+  padding: 24px;
+}
+
+.job-card h3 {
+  margin-top: 16px;
+}
+
+.job-button {
+  width: fit-content;
+  margin-top: 24px;
+}
+
+.career-cta-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 40px;
+  border-radius: 16px;
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: var(--shadow-hover);
+}
+
+.career-cta-box h2,
+.career-cta-box p {
+  color: var(--white);
+}
+
+.career-cta-box p {
+  opacity: 0.85;
+}
+
 .partners {
   background: var(--surface-card);
 }
@@ -827,7 +1049,8 @@ textarea:focus {
 
   .feature-grid,
   .card-grid,
-  .project-grid {
+  .project-grid,
+  .job-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -838,8 +1061,14 @@ textarea:focus {
   .split-layout,
   .contact-layout,
   .service-area,
-  .map-panel {
+  .map-panel,
+  .career-hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .career-cta-box {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .area-list {
@@ -913,19 +1142,36 @@ textarea:focus {
   .services,
   .projects,
   .contact,
-  .partners {
+  .partners,
+  .career-hero,
+  .career-values,
+  .internship,
+  .openings,
+  .career-cta {
     padding: 56px 0;
   }
 
   .feature-grid,
   .card-grid,
   .project-grid,
+  .job-grid,
   .partner-grid,
   .form-grid,
   .values-grid,
   .process,
   .service-area,
-  .map-panel {
+  .map-panel,
+  .career-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-panel,
+  .career-checklist,
+  .career-cta-box {
+    padding: 24px;
+  }
+
+  .career-metric {
     grid-template-columns: 1fr;
   }
 
