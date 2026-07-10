@@ -7,6 +7,7 @@
   --navy-soft: #3a475c;
   --ink: #191c1e;
   --muted: #44474c;
+  --gray: #b7b7b7;
   --outline: #c5c6cd;
   --blue: #3755c3;
   --blue-soft: #dde1ff;
@@ -273,7 +274,8 @@ h3 {
 
 .highlights,
 .services,
-.contact {
+.contact,
+.partners {
   padding: 80px 0;
 }
 
@@ -686,6 +688,56 @@ textarea:focus {
   border-radius: 12px;
 }
 
+.partners {
+  background: var(--surface-card);
+}
+
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.partner-card {
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid rgba(197, 198, 205, 0.75);
+  border-radius: 16px;
+  background: var(--surface-low);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.partner-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+}
+
+.partner-logo {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 18px;
+  place-items: center;
+  border: 1px dashed var(--outline);
+  border-radius: 12px;
+  background: var(--surface-card);
+  color: var(--gray);
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.partner-card p {
+  color: var(--muted);
+}
+
+.partner-name {
+  color: var(--gray);
+}
+
 .site-footer {
   padding: 48px 0;
   background: var(--navy);
@@ -773,6 +825,10 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .partner-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .split-layout,
   .contact-layout,
   .service-area,
@@ -845,13 +901,15 @@ textarea:focus {
   .about,
   .services,
   .projects,
-  .contact {
+  .contact,
+  .partners {
     padding: 56px 0;
   }
 
   .feature-grid,
   .card-grid,
   .project-grid,
+  .partner-grid,
   .form-grid,
   .values-grid,
   .process,
