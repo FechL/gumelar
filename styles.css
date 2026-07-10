@@ -10,6 +10,8 @@
   --outline: #c5c6cd;
   --blue: #3755c3;
   --blue-soft: #dde1ff;
+  --red: #c93737;
+  --dark-red: #a12b2b;
   --yellow: #c9a900;
   --white: #ffffff;
   --shadow: 0 4px 12px rgba(11, 25, 44, 0.08);
@@ -100,14 +102,10 @@ textarea {
   font-weight: 800;
 }
 
-.brand-mark {
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--navy);
-  color: var(--white);
+.brand-logo {
+  width: 56px;
+  height: 42px;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -190,7 +188,7 @@ textarea {
 }
 
 .eyebrow.dark {
-  color: var(--blue);
+  color: var(--red);
 }
 
 h1,
@@ -256,7 +254,7 @@ h3 {
 }
 
 .button-primary {
-  background: var(--blue);
+  background: var(--red);
   color: var(--white);
 }
 
@@ -414,7 +412,7 @@ h3 {
 }
 
 .section-heading {
-  max-width: 760px;
+  max-width: 780px;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -790,9 +788,9 @@ textarea:focus {
     font-size: 16px;
   }
 
-  .brand-mark {
-    width: 32px;
-    height: 32px;
+  .brand-logo {
+    width: 46px;
+    height: 34px;
   }
 
   .site-nav {
