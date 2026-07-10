@@ -613,6 +613,12 @@ h3 {
   padding: 32px;
 }
 
+.form-submit {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -895,6 +901,11 @@ textarea:focus {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .form-submit {
+    width: fit-content;
+    margin-left: auto;
   }
 
   .highlights,
