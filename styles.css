@@ -754,9 +754,30 @@ h3 {
   padding: 20px;
 }
 
+.contact-info .info-card {
+  border-color: rgba(55, 85, 195, 0.35);
+  background: var(--blue);
+  color: var(--white);
+}
+
+.contact-info .info-card::before {
+  background: var(--white);
+}
+
 .info-card .material-symbols-outlined {
   color: var(--blue);
   font-size: 34px;
+}
+
+.contact-info .info-card .material-symbols-outlined,
+.contact-info .info-card h3,
+.contact-info .info-card p,
+.contact-info .info-card .inline-link {
+  color: var(--white);
+}
+
+.contact-info .info-card .inline-link:hover {
+  color: var(--blue-soft);
 }
 
 .contact-form {
