@@ -78,7 +78,8 @@ textarea {
   scroll-margin-top: 88px;
 }
 
-body.popup-open {
+body.popup-open,
+body.sample-lightbox-open {
   overflow: hidden;
 }
 
@@ -418,6 +419,7 @@ h3 {
 .sample-showcase {
   flex: 1;
   overflow: hidden;
+  padding: 12px 0;
 }
 
 .sample-track {
@@ -463,6 +465,15 @@ h3 {
   border-radius: 16px;
   background: var(--surface-card);
   box-shadow: var(--shadow);
+  cursor: zoom-in;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.sample-card:hover {
+  z-index: 2;
+  border-color: var(--blue);
+  box-shadow: var(--shadow-hover);
+  transform: scale(1.03);
 }
 
 .sample-card img {
@@ -478,6 +489,60 @@ h3 {
 
 .sample-card.diagram-card img {
   object-fit: cover;
+}
+
+.sample-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  place-items: center;
+  padding: 32px;
+  background: rgba(14, 28, 47, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.sample-lightbox.is-open {
+  display: grid;
+}
+
+.sample-lightbox-panel {
+  position: relative;
+  display: grid;
+  width: min(1100px, 100%);
+  max-height: calc(100vh - 64px);
+  place-items: center;
+}
+
+.sample-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 96px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  background: var(--surface-card);
+  box-shadow: 0 24px 72px rgba(0, 0, 0, 0.34);
+  object-fit: contain;
+}
+
+.sample-lightbox-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--navy);
+  box-shadow: var(--shadow-hover);
+  cursor: pointer;
+}
+
+.sample-lightbox-close .material-symbols-outlined {
+  font-size: 26px;
 }
 
 .feature-card .material-symbols-outlined,

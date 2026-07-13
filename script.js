@@ -66,6 +66,7 @@ if (sampleCarousel) {
   const track = sampleCarousel.querySelector("[data-sample-track]");
   const prevButton = sampleCarousel.querySelector("[data-sample-prev]");
   const nextButton = sampleCarousel.querySelector("[data-sample-next]");
+  const sampleImages = [...sampleCarousel.querySelectorAll(".sample-card img")];
   let isAnimating = false;
 
   const getSlideStep = () => {
@@ -129,6 +130,56 @@ if (sampleCarousel) {
 
   if (nextButton) {
     nextButton.addEventListener("click", moveNext);
+  }
+
+  if (sampleImages.length > 0) {
+    const lightbox = document.createElement("div");
+    lightbox.className = "sample-lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-label", "Preview gambar showcase");
+    lightbox.innerHTML = `
+      <div class="sample-lightbox-panel">
+        <button class="sample-lightbox-close" type="button" aria-label="Tutup preview gambar">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+        <img class="sample-lightbox-image" alt="">
+      </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImage = lightbox.querySelector(".sample-lightbox-image");
+    const closeButton = lightbox.querySelector(".sample-lightbox-close");
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-open");
+      document.body.classList.remove("sample-lightbox-open");
+      lightboxImage.removeAttribute("src");
+      lightboxImage.alt = "";
+    };
+
+    sampleImages.forEach((image) => {
+      image.addEventListener("click", () => {
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt || "Preview gambar showcase";
+        lightbox.classList.add("is-open");
+        document.body.classList.add("sample-lightbox-open");
+        closeButton.focus();
+      });
+    });
+
+    closeButton.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
+    });
   }
 }
 
