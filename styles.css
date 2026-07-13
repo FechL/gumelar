@@ -107,7 +107,7 @@ body.popup-open {
   text-align: center;
 }
 
-.development-popup-card > .material-symbols-outlined {
+.development-popup-card>.material-symbols-outlined {
   display: grid;
   width: 56px;
   height: 56px;
@@ -390,7 +390,7 @@ h3 {
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: var(--blue);
+  background: var(--red);
   content: "";
   opacity: 0;
   transition: opacity 0.2s ease;
@@ -408,6 +408,78 @@ h3 {
   padding: 24px;
 }
 
+.sample-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sample-showcase {
+  flex: 1;
+  overflow: hidden;
+}
+
+.sample-track {
+  display: flex;
+  gap: var(--gutter);
+  transition: transform 0.38s ease;
+  will-change: transform;
+}
+
+.sample-nav {
+  z-index: 1;
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(197, 198, 205, 0.95);
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--navy);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sample-nav:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+.sample-nav .material-symbols-outlined {
+  font-size: 30px;
+}
+
+.sample-card {
+  position: relative;
+  flex: 0 0 clamp(180px, 18vw, 240px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid rgba(197, 198, 205, 0.75);
+  border-radius: 16px;
+  background: var(--surface-card);
+  box-shadow: var(--shadow);
+}
+
+.sample-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--surface-low);
+}
+
+.sample-card.photo-card img {
+  transform: rotate(90deg) scale(1.78);
+}
+
+.sample-card.diagram-card img {
+  object-fit: cover;
+}
+
 .feature-card .material-symbols-outlined,
 .service-card .material-symbols-outlined {
   display: grid;
@@ -416,7 +488,7 @@ h3 {
   margin-bottom: 16px;
   place-items: center;
   border-radius: 8px;
-  background: var(--blue-soft);
+  /* background: var(--blue-soft); */
   color: var(--blue);
   font-size: 28px;
 }
@@ -432,24 +504,26 @@ h3 {
 }
 
 .about {
-  padding: 96px 0;
+  padding: 64px 0;
   background: var(--surface-card);
 }
 
 .split-layout {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 64px;
+  gap: 0px;
   align-items: center;
 }
 
 .image-panel {
   position: relative;
+  width: min(100%, 300px);
+  margin: 0 auto;
 }
 
 .image-panel::before {
   position: absolute;
-  inset: -16px;
+  inset: -10px;
   z-index: 0;
   border: 1px solid var(--surface-line);
   border-radius: 16px;
@@ -461,10 +535,13 @@ h3 {
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
   border-radius: 16px;
-  object-fit: cover;
   box-shadow: var(--shadow);
+}
+
+.about p {
+  margin: 10px 0;
 }
 
 .values-grid {
@@ -1130,6 +1207,23 @@ textarea:focus {
   .hero-actions,
   .button {
     width: 100%;
+  }
+
+  .sample-carousel {
+    gap: 10px;
+  }
+
+  .sample-nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .sample-nav .material-symbols-outlined {
+    font-size: 26px;
+  }
+
+  .sample-card {
+    flex-basis: min(220px, 62vw);
   }
 
   .form-submit {

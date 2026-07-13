@@ -60,6 +60,78 @@ filterButtons.forEach((button) => {
   });
 });
 
+const sampleCarousel = document.querySelector("[data-sample-carousel]");
+
+if (sampleCarousel) {
+  const track = sampleCarousel.querySelector("[data-sample-track]");
+  const prevButton = sampleCarousel.querySelector("[data-sample-prev]");
+  const nextButton = sampleCarousel.querySelector("[data-sample-next]");
+  let isAnimating = false;
+
+  const getSlideStep = () => {
+    const firstCard = track ? track.querySelector(".sample-card") : null;
+    if (!track || !firstCard) return 0;
+
+    const trackStyle = window.getComputedStyle(track);
+    const gap = Number.parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+    return firstCard.getBoundingClientRect().width + gap;
+  };
+
+  const resetTrack = () => {
+    if (!track) return;
+
+    track.style.transition = "none";
+    track.style.transform = "translateX(0)";
+    track.offsetHeight;
+    track.style.transition = "";
+    isAnimating = false;
+  };
+
+  const moveNext = () => {
+    if (!track || isAnimating) return;
+
+    const step = getSlideStep();
+    const firstCard = track.firstElementChild;
+    if (!firstCard || step === 0) return;
+
+    isAnimating = true;
+    track.style.transform = `translateX(-${step}px)`;
+
+    track.addEventListener("transitionend", () => {
+      track.appendChild(firstCard);
+      resetTrack();
+    }, { once: true });
+  };
+
+  const movePrev = () => {
+    if (!track || isAnimating) return;
+
+    const step = getSlideStep();
+    const lastCard = track.lastElementChild;
+    if (!lastCard || step === 0) return;
+
+    isAnimating = true;
+    track.style.transition = "none";
+    track.insertBefore(lastCard, track.firstElementChild);
+    track.style.transform = `translateX(-${step}px)`;
+    track.offsetHeight;
+    track.style.transition = "";
+    track.style.transform = "translateX(0)";
+
+    track.addEventListener("transitionend", () => {
+      isAnimating = false;
+    }, { once: true });
+  };
+
+  if (prevButton) {
+    prevButton.addEventListener("click", movePrev);
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", moveNext);
+  }
+}
+
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
 
