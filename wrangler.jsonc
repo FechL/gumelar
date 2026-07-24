@@ -1,0 +1,14 @@
+{
+    "name": "gumelar",
+    "main": "src/index.js",
+    "compatibility_date": "2026-07-24",
+    "assets": {
+        "directory": "."
+    },
+    "compatibility_flags": [
+        "nodejs_compat"
+    ],
+    "observability": {
+        "enabled": true
+    }
+}
