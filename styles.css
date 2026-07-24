@@ -70,7 +70,7 @@ textarea {
 }
 
 .container {
-  width: min(var(--container), calc(100% - 96px));
+  width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
 }
 
@@ -1274,7 +1274,7 @@ textarea:focus {
 
 @media (max-width: 640px) {
   .container {
-    width: calc(100% - 96px);
+    width: calc(100% - 48px);
   }
 
   .site-header {
