@@ -1,4 +1,4 @@
-name = "gumelar-contact-worker"
+name = "gumelar"
 main = "worker.js"
 compatibility_date = "2026-07-24"
 
