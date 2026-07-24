@@ -1,6 +1,0 @@
-name = "gumelar-contact-worker"
-main = "worker.js"
-compatibility_date = "2026-07-24"
-
-[vars]
-FROM_EMAIL = "noreply@gumelar.net"
