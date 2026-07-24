@@ -185,11 +185,43 @@ if (sampleCarousel) {
 
 const contactForm = document.querySelector("#contact-form");
 const formStatus = document.querySelector("#form-status");
+const contactSubmitButton = contactForm?.querySelector("button[type='submit']");
 
 if (contactForm && formStatus) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    event.currentTarget.reset();
-    formStatus.textContent = "Permintaan berhasil disiapkan. Tim kami akan segera menghubungi Anda.";
+    const formData = new FormData(contactForm);
+    const payload = Object.fromEntries(formData.entries());
+
+    formStatus.textContent = "Mengirim permintaan...";
+    if (contactSubmitButton) {
+      contactSubmitButton.disabled = true;
+    }
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then(async (response) => {
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(data.error || "Gagal mengirim permintaan.");
+        }
+
+        contactForm.reset();
+        formStatus.textContent = "Permintaan berhasil dikirim. Tim kami akan menghubungi Anda.";
+      })
+      .catch((error) => {
+        formStatus.textContent = error.message || "Terjadi kesalahan saat mengirim permintaan.";
+      })
+      .finally(() => {
+        if (contactSubmitButton) {
+          contactSubmitButton.disabled = false;
+        }
+      });
   });
 }
