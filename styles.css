@@ -576,7 +576,7 @@ h3 {
 .split-layout {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-  gap: 0px;
+  gap: clamp(24px, 4vw, 56px);
   align-items: stretch;
 }
 
