@@ -459,7 +459,7 @@ h3 {
 .sample-card {
   position: relative;
   flex: 0 0 clamp(180px, 18vw, 240px);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border: 1px solid rgba(197, 198, 205, 0.75);
   border-radius: 16px;
